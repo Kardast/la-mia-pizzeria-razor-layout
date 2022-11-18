@@ -1,0 +1,79 @@
+﻿<h1>Snacks</h1>
+
+<div>
+
+    <p>Qui passerai la giornata a fare esercizi e a pensare alle papere.</p>
+</div>
+
+<div>
+
+    <p>
+        Esercizi:
+        <br />
+        1. Dichiarare una variabile valorizzandola con il nostro nome.
+        Dichiarare un'altra variabile valorizzandola con il nostro cognome.
+        Stampare il nostro nome e cognome all'interno di un tag h2.
+        <br />
+        2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
+        Stampare dentro uno span il risultato.
+        <br />
+        3. Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina
+        <br />
+        4. Creare una List int
+        di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70
+        <br />
+        5. Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi
+        <br />
+        6. Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina
+        <br />
+        a. la data di 7 giorni fa
+        <br />
+        b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+        <br />
+        c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+    </p>
+</div>
+
+@{
+    //es 1
+    string name = "Sandro";
+    string surname = "Ficini";
+
+    //es 2
+    int sum(int n)
+    {
+        int number = 1;
+        for (int i = 1; i < n; i++)
+        {
+            number += (i + 1);
+        }
+        return number;
+    }
+    //es 3
+    string sentence = "nel mezzo del cammin di nostra vita";
+    int counter(string sentence, char search)
+    {
+        int numberChar = 0;
+        foreach (char character in sentence)
+        {
+            if(character == search)
+            {
+                numberChar++;
+            }
+        }
+        return numberChar;
+    }
+
+}
+
+<h2>
+    <p>
+        Il mio nome è: @name.
+        <br />
+        Il mio cognome è: @surname.
+        <br />
+        La somma dei numeri che vanno da 1 a 5 è: @sum(4).
+        <br />
+        La lettera "n" è presente: @counter(sentence, 'n') volte.
+    </p>
+</h2>

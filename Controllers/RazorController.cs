@@ -4,26 +4,9 @@ using System.Diagnostics;
 
 namespace la_mia_pizzeria_static.Controllers
 {
-    public class HomeController : Controller
+    public class RazorController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult About()
+        public IActionResult Snacks()
         {
             return View();
         }
@@ -34,4 +17,5 @@ namespace la_mia_pizzeria_static.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
 }
